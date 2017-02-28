@@ -1,0 +1,55 @@
+<link rel="import" href="../../polymer/polymer.html">
+
+<dom-module id="menu-nodes">
+  <style include="shared-styles"></style>
+  <style>    
+    .main #glyph {
+      font-size: 120%;
+      color: black;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .contact.node {
+      padding-bottom: .4em;
+    }
+    
+    .about a,
+    .contact a,
+    .experience a {
+      line-height: 0.9;
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .about a:hover,
+    .contact a:hover,
+    .experience a:hover {
+      color: #192f7d;
+    }
+    
+    .about i,
+    .contact i,
+    .experience i {
+      font-size: 100%;
+      line-height: 0.9em;
+      height: .9em;
+      width: .9em;
+    }
+    
+    .about i.glyph-external,
+    .contact i.glyph-external,
+    .experience i.glyph-external {
+      line-height: 1em;
+      vertical-align: bottom;
+    }
+  </style>
+  <template>
+    <div class$="{{menu}}">
+      <i id="glyph"></i>
+      <content id="menu-name"></content>
+      <a hidden$="{{!url}}" href$="{{url}}" target="_blank"><i class="glyph-external"></i></a>
+    </div>
+  </template>
+  <script src="menu-nodes.js"></script>
+</dom-module>
